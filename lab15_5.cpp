@@ -20,3 +20,19 @@ int main(){
 
 //Do not modify the code above this line
 //Write definition of shuffle() using pointer after this line. 
+void shuffle(int *a, int *b, int *c, int *d) {
+    int arr[] = {*a, *b, *c, *d};  
+    int temp, randomIndex;
+    
+    for (int i = 3; i > 0; i--) {
+        randomIndex = rand() % (i + 1);  
+        temp = arr[i];
+        arr[i] = arr[randomIndex];
+        arr[randomIndex] = temp;
+    }
+
+    *a = arr[0];
+    *b = arr[1];
+    *c = arr[2];
+    *d = arr[3];
+}
